@@ -51,7 +51,7 @@ class UsuarioDAO {
 
     public static function addUsuario($usuario) {
         $connection = Connection::getConnection();
-        $sql = "INSERT INTO tdit_usuarioss (login, nome, cloginades_login) VALUES ('$usuario->login', '$usuario->nome', '$usuario->cloginades_login');";
+        $sql = "INSERT INTO tdit_usuarioss (login, nome, senha, email) VALUES ('$usuario->login', '$usuario->nome', '$usuario->senha', '$usuario->email');";
         $result = mysqli_query($connection, $sql);
         if (!$result) {
             http_response_code(403);
